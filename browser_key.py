@@ -7,11 +7,9 @@ from pe_utils import get_signer_certificate_hash, get_file_version
 
 
 def generate_browser_key(pe, config):
-    certificate_hash = get_signer_certificate_hash(pe)
-
     key = bytes()
     if 'examKeySalt' in config:
         key = base64.b64decode(config['examKeySalt'])
 
-    payload = certificate_hash + get_file_version(pe) + generate_config_key(config).encode()
+    payload = get_signer_certificate_hash(pe) + get_file_version(pe) + generate_config_key(config).encode()
     return hmac.new(key, payload, hashlib.sha256).hexdigest()
