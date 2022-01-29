@@ -2,7 +2,7 @@
 
 Generate X-SafeExamBrowser-ConfigKeyHash header:
 ```
-python3 main.py config SebClientSettings.seb ""
+python3 main.py config "http://localhost:8000/index.php" SebClientSettings.seb ""
 ```
 
 Generate BrowserExamKey:
