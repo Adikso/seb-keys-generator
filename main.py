@@ -19,9 +19,11 @@ def load_config(file_name, password):
 
 
 class Application(object):
-    def config(self, file_name, password):
+    def config(self, url, file_name, password):
         config = load_config(file_name, password)
-        return generate_config_key(config)
+        config_key = generate_config_key(config)
+
+        return generate_url_hash(url, config_key)
 
     def browser(self, exe_file_name, config_file_name, config_password):
         config = load_config(config_file_name, config_password)
