@@ -1,4 +1,4 @@
-# seb-keys-extractor
+# seb-keys-generator
 
 Generate X-SafeExamBrowser-ConfigKeyHash header:
 ```
